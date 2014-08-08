@@ -8,7 +8,6 @@ import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.PendingIntent;
@@ -32,7 +31,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 	public static final String MIME_TEXT_PLAIN = "text/plain";
 	public static final String TAG = "NfcDemo";
 
