@@ -1,0 +1,21 @@
+INDEX VERSION 1.126+/home/sansores/Documentos/proyectosandroid/.metadata/.plugins/org.eclipse.jdt.core
+647615970.index
+3032601243.index
+2468012628.index
+2710965515.index
+297959832.index
+3715100032.index
+3316199131.index
+287721776.index
+208641300.index
+763485703.index
+730976291.index
+314549257.index
+374042932.index
+1316342035.index
+1666917713.index
+918981327.index
+3036708749.index
+1978847686.index
+843265188.index
+3140596988.index
