@@ -65,10 +65,42 @@ public class MiIntentService extends IntentService {
 		            ///home/sansores/Descargas/android-master/Nfc/src/example/nfc/Json.java            ACTION_PROGRESO=Accions;
 		            Intent bcIntent = new Intent();
 		    		bcIntent.setAction(ACTION_PROGRESO);
+		    		
+		    		try{
+		    			
+		    			int id_usuariotemp=Integer.parseInt(modelo.getLocal("id_usuario"));
+		    		 
+		    			if(id_usuariotemp>0){
+		    				
+		    				if(id_usuariotemp!=json.getInt("id")){
+		    					
+		    					modelo.setLocal("id_usuariotemp", id_usuariotemp+"");
+		    					Log.e("statususuario", "existente y es distinto");
+		    				}else{
+		    					Log.e("statususuario", "existente");
+		    				}
+		    				
+		    				modelo.setLocal("statussesion", true);
+		    				
+		    			}else{
+		    				Log.e("statususuario", "nuevo");
+		    				modelo.setLocal("statussesion", false);
+		    			}
+		    			
+		    		}catch(Exception e){
+		    			e.printStackTrace();
+		    		}
+		    		
 		    		modelo.setLocal("id_usuario", json.getInt("id")+"");
 		    		sendBroadcast(bcIntent);
-		    		startActivity(new Intent(this, 
-		    				Tiempoterminado.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+		    		
+		    		Intent i = new Intent(getApplicationContext(), Iniciarjuego.class);
+		    		i.putExtra("id_usuario", json.getInt("id")+"");
+		    		i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		    		startActivity(i);
+		    	   		
+//		    		startActivity(new Intent(this, 
+//		    				Iniciarjuego.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
 					 
 				}
 			}
@@ -87,7 +119,7 @@ public class MiIntentService extends IntentService {
 	private void tareaLarga()
 	{
 		try { 
-			Thread.sleep(5000); 
+			Thread.sleep(1000); 
 		} catch(InterruptedException e) {}
 	}
 }

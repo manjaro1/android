@@ -29,5 +29,7 @@
 	<string name="msg_registro">Vuelva a colocar la tarjeta NFC sobre el sensor ubicado cerca de la cámara</string>
 	<string name="msg_time">Se ha agotado el tiempo asignado</string>
     <string name="explanation">Attach NFC Tag to read the content.</string>
+    <string name="game">Para comenzar a jugar pulse el boton Continuar</string>
+    <string name="alert">El tiempo asignado se ha agotado,  para dejar de ver este mensaje pulse en el boton continuar</string>
 
 </resources>

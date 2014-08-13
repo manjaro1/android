@@ -16,27 +16,29 @@ public final class R {
         public static final int padding_small=0x7f040000;
     }
     public static final class drawable {
-        public static final int fail=0x7f020000;
-        public static final int games=0x7f020001;
-        public static final int ic_action_search=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int logozbeltia=0x7f020004;
-        public static final int nfc=0x7f020005;
-        public static final int success=0x7f020006;
-        public static final int time=0x7f020007;
+        public static final int alert=0x7f020000;
+        public static final int borde=0x7f020001;
+        public static final int btn_naranja=0x7f020002;
+        public static final int fail=0x7f020003;
+        public static final int games=0x7f020004;
+        public static final int ic_action_search=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int logozbeltia=0x7f020007;
+        public static final int nfc=0x7f020008;
+        public static final int success=0x7f020009;
+        public static final int time=0x7f02000a;
     }
     public static final class id {
-        public static final int btnRegister=0x7f080005;
-        public static final int imageView1=0x7f080006;
-        public static final int imageView2=0x7f080001;
+        public static final int FR_REGISTRAR=0x7f080003;
+        public static final int alert=0x7f080001;
+        public static final int btnRegister=0x7f080006;
         public static final int lblMessage=0x7f080002;
-        public static final int menu_settings=0x7f080008;
-        public static final int options_clear=0x7f080009;
-        public static final int options_exit=0x7f08000a;
-        public static final int textView1=0x7f080000;
-        public static final int txtEmail=0x7f080004;
-        public static final int txtName=0x7f080003;
-        public static final int txt_registro=0x7f080007;
+        public static final int menu_settings=0x7f080007;
+        public static final int options_clear=0x7f080008;
+        public static final int options_exit=0x7f080009;
+        public static final int relativeLayout1=0x7f080000;
+        public static final int txtEmail=0x7f080005;
+        public static final int txtName=0x7f080004;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -48,12 +50,14 @@ public final class R {
         public static final int options_menu=0x7f070001;
     }
     public static final class string {
+        public static final int alert=0x7f05001d;
         public static final int already_registered=0x7f050005;
         public static final int app_name=0x7f050000;
         public static final int error_config=0x7f050004;
         public static final int error_detected=0x7f050015;
         public static final int error_writing=0x7f050017;
         public static final int explanation=0x7f05001b;
+        public static final int game=0x7f05001c;
         public static final int gcm_deleted=0x7f05000b;
         public static final int gcm_error=0x7f050009;
         public static final int gcm_message=0x7f050008;

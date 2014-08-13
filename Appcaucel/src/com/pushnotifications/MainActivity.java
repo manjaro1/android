@@ -223,12 +223,9 @@ public class MainActivity extends Activity {
 					Intent msgIntent = new Intent(MainActivity.this, MiIntentService.class);
 					msgIntent.putExtra("id", result);
 					startService(msgIntent);
-					
+
 					finish();
-								
-		        
-				
-				
+			
 //				Boolean response = false, no_valid=false;
 //				String[] campos  ={"id"};
 //				String[] valores ={result};

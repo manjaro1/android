@@ -2,35 +2,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#ffffff" >
+    android:background="#E6E6E6"
+    android:padding="10dp" >
 
-     <TextView
-         android:id="@+id/textView1"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignTop="@+id/imageView2"
-         android:layout_marginLeft="51dp"
-         android:layout_toRightOf="@+id/imageView2"
-         android:textSize="22sp"
-         android:text="Juegos" />
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/borde" >
+        
+        <ImageView
+	        android:id="@+id/alert"
+	        android:layout_centerHorizontal="true"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="45dp"
+	        android:layout_marginTop="25dp"
+	        android:src="@drawable/games" />
+        
+        <TextView
+	         android:id="@+id/lblMessage"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_below="@+id/alert"
+	         android:padding="10dp"
+	         android:textSize="22sp"
+	         android:text="@string/game" />
+	        
+        <Button
+        	android:id="@+id/FR_REGISTRAR"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblMessage"
+            android:background="@drawable/btn_naranja"
+            android:onClick="continuar"
+            android:padding="10dp"
+            android:text="CONTINUAR"
+            android:textColor="#FFFFFF" />
+        
+    </RelativeLayout>
 
-     <ImageView
-         android:id="@+id/imageView2"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignParentLeft="true"
-         android:layout_alignParentTop="true"
-         android:layout_marginLeft="46dp"
-         android:layout_marginTop="50dp"
-         android:src="@drawable/games" />
-
-     <TextView
-         android:id="@+id/lblMessage"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignLeft="@+id/textView1"
-         android:layout_below="@+id/textView1"
-         android:text="" />
+    
 
 </RelativeLayout>

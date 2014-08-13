@@ -18,6 +18,7 @@ import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,7 +39,7 @@ public class Tiempoterminado extends Activity{
 		@Override
 		public void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
-			setContentView(R.layout.activity_main);
+			setContentView(R.layout.tiempoagotado);
 			ctx = this;
 			modelo.setContext(this);
 			id_usuario=modelo.getLocal("id_usuario");
@@ -48,8 +49,8 @@ public class Tiempoterminado extends Activity{
 			if (!cd.isConnectingToInternet()) {
 				// Internet Connection is not present
 				alert.showAlertDialog(Tiempoterminado.this,
-						"Internet Connection Error",
-						"Please connect to working Internet connection", false);
+						"Internet  Error",
+						"Verifique la conexion de la tableta", false);
 				// stop executing code by return
 				return;
 			}
@@ -81,7 +82,7 @@ public class Tiempoterminado extends Activity{
 				// Device is already registered on GCM
 				if (GCMRegistrar.isRegisteredOnServer(this)) {
 					// Skips registration.				
-					Toast.makeText(getApplicationContext(), "Already registered with GCM", Toast.LENGTH_LONG).show();
+					//Toast.makeText(getApplicationContext(), "Already registered with GCM", Toast.LENGTH_LONG).show();
 				} else {
 					// Try to register again, but not in the UI thread.
 					// It's also necessary to cancel the thread onDestroy(),
@@ -125,8 +126,8 @@ public class Tiempoterminado extends Activity{
 				 * */
 				
 				// Showing received message
-				lblMessage.append(newMessage + "\n");			
-				Toast.makeText(getApplicationContext(), "New Message: " + newMessage, Toast.LENGTH_LONG).show();
+				//lblMessage.append(newMessage + "\n");			
+				//Toast.makeText(getApplicationContext(), "New Message: " + newMessage, Toast.LENGTH_LONG).show();
 				
 				// Releasing wake lock
 				WakeLocker.release();
@@ -173,6 +174,9 @@ public class Tiempoterminado extends Activity{
 			super.onResume();
 		}
 		
+		public void continuar(View view) {
+			finish();
+		}
 		
 
 	}

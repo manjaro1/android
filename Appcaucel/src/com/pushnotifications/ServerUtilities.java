@@ -32,13 +32,18 @@ public final class ServerUtilities {
      *
      */
     static void register(final Context context, String id_usuario, final String regId) {
-        Log.i(TAG, "registering device (regId = " + regId + ")");
+        //Log.i(TAG, "registering device (regId = " + regId + ")");
+    	Log.i(TAG, "id_usuario"+id_usuario);
+    	Modelo modelo = new Modelo();
+    	modelo.setContext(context);
+    	String id_usuariolocal=modelo.getLocal("id_usuario");
+    	
         String serverUrl = SERVER_URL;
         Map<String, String> params = new HashMap<String, String>();
         params.put("regId", regId);
-        params.put("id_usuario", id_usuario);
+        params.put("id_usuario", id_usuariolocal);
        
-        
+                
         long backoff = BACKOFF_MILLI_SECONDS + random.nextInt(1000);
         // Once GCM returns a registration id, we need to register on our server
         // As the server might be down, we will retry it a couple

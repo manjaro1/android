@@ -88,7 +88,16 @@
             android:configChanges="orientation|screenSize">
         </activity> 
         
+         <activity
+            android:name="com.pushnotifications.Iniciarjuego"
+            android:theme="@style/MyTheme"
+            android:configChanges="orientation|screenSize">
+        </activity>
+        
+        
+        
         <service android:name=".MiIntentService"></service>
+        <service android:name=".IntentPausa"></service>
         
     </application>
 

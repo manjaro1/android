@@ -58,10 +58,11 @@ public class GCMIntentService extends GCMBaseIntentService {
         //generateNotification(context, message);
         Modelo modelo = new Modelo();
         modelo.setContext(context);
-        String status= modelo.getLocal("status");
+       // String status= modelo.getLocal("status");
         
         try{
         	JSONObject json = Json.getJSON(message);
+        	
         	int tipo= json.getInt("tipo");
             String mensaje = json.getString("mensaje");
             switch(tipo){
@@ -70,6 +71,13 @@ public class GCMIntentService extends GCMBaseIntentService {
             	generateNotification(context, mensaje);
             	break;
             case 2:
+            	//String statustiempo= json.getString("status");
+            	//modelo.setLocal("status", status);
+            	//Log.e("Estatus",status);
+            	//Intent msgIntent = new Intent(this, IntentPausa.class);
+				//msgIntent.putExtra("id", result);
+				//startService(msgIntent);
+            	String status= modelo.getLocal("status");
             		if(status.equals("0")){
             			startActivity(new Intent(this, 
     		    				Tiempoterminado.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
