@@ -157,61 +157,6 @@ public class Iniciarjuego extends Activity{
 		finish();
 	}
 
-	public void cerrarSesion(View view){
-		modelo.closeSesion();
-		//quitar registro gcm
-		// Make sure the device has the proper dependencies.
-		GCMRegistrar.checkDevice(this);
-		// Make sure the manifest was properly set - comment out this line
-		// while developing the app, then uncomment it when it's ready.
-		GCMRegistrar.checkManifest(this);
-
-
-		final String regId = GCMRegistrar.getRegistrationId(this);
-
-		// Check if regid already presents
-		if (regId.equals("")) {
-			// Registration is not present, register now with GCM			
-			GCMRegistrar.register(this, SENDER_ID);
-			//Log.d("registro", SENDER_ID);
-		} else {
-			// Device is already registered on GCM
-			if (GCMRegistrar.isRegisteredOnServer(this)) {
-				// Skips registration.		
-				Log.d("registro", "existente");
-				//Toast.makeText(getApplicationContext(), "Already registered with GCM", Toast.LENGTH_LONG).show();
-			} else {
-				// Try to register again, but not in the UI thread.
-				// It's also necessary to cancel the thread onDestroy(),
-				// hence the use of AsyncTask instead of a raw thread.
-				Log.d("registro", "nuevo");
-				final Context context = this;
-				mRegisterTask = new AsyncTask<Void, Void, Void>() {
-
-					@Override
-					protected Void doInBackground(Void... params) {
-						// Register on our server
-						// On server creates a new user
-						ServerUtilities.unregister(context, id_usuario);
-						return null;
-
-					}
-
-					@Override
-					protected void onPostExecute(Void result) {
-						mRegisterTask = null;
-//						Intent intent = new Intent(context, Login.class);
-//						intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//						startActivity(intent);
-						finish();
-					}
-
-				};
-				mRegisterTask.execute(null, null, null);
-			}
-		}
-
-	}
 
 
 }

@@ -94,6 +94,12 @@
             android:configChanges="orientation|screenSize">
         </activity>
         
+         <activity
+            android:name="com.pushnotifications.QuitarRegistro"
+            android:theme="@style/MyTheme"
+            android:configChanges="orientation|screenSize">
+        </activity>
+        
         
         
         <service android:name=".MiIntentService"></service>

@@ -76,6 +76,7 @@ public class MiIntentService extends IntentService {
 		    					
 		    					modelo.setLocal("id_usuariotemp", id_usuariotemp+"");
 		    					Log.e("statususuario", "existente y es distinto");
+		    					startActivity(new Intent(this, QuitarRegistro.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
 		    				}else{
 		    					Log.e("statususuario", "existente");
 		    				}

@@ -1,6 +1,6 @@
 package com.pushnotifications;
 
-import static com.pushnotifications.CommonUtilities.SERVER_URL;
+import static com.pushnotifications.Modelo.SERVER_URL;
 import static com.pushnotifications.CommonUtilities.TAG;
 import static com.pushnotifications.CommonUtilities.displayMessage;
 
@@ -38,7 +38,7 @@ public final class ServerUtilities {
     	modelo.setContext(context);
     	String id_usuariolocal=modelo.getLocal("id_usuario");
     	
-        String serverUrl = SERVER_URL;
+        String serverUrl = "http://"+SERVER_URL+"/register";
         Map<String, String> params = new HashMap<String, String>();
         params.put("regId", regId);
         params.put("id_usuario", id_usuariolocal);
@@ -89,7 +89,7 @@ public final class ServerUtilities {
      */
     static void unregister(final Context context, final String regId) {
         Log.i(TAG, "unregistering device (regId = " + regId + ")");
-        String serverUrl = SERVER_URL + "/unregister";
+        String serverUrl = SERVER_URL+"unregister";
         Map<String, String> params = new HashMap<String, String>();
         params.put("regId", regId);
         try {
