@@ -95,6 +95,12 @@ public class MiIntentService extends IntentService {
 		    		modelo.setLocal("id_usuario", json.getInt("id")+"");
 		    		sendBroadcast(bcIntent);
 		    		
+		    		
+		    				    		
+		    		Intent msgIntent = new Intent(this, IntentPausarPantalla.class);
+		    		msgIntent.putExtra("id", json.getInt("id")+"");
+					startService(msgIntent);
+		    		
 		    		Intent i = new Intent(getApplicationContext(), Iniciarjuego.class);
 		    		i.putExtra("id_usuario", json.getInt("id")+"");
 		    		i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

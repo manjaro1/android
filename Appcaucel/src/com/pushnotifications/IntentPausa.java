@@ -9,7 +9,12 @@ public class IntentPausa extends IntentService{
 	public IntentPausa() {
         super("IntentPausa");
     }
-
+	
+	@Override
+    public void onCreate() {
+		
+	}
+	
 	@Override
 	protected void onHandleIntent(Intent intent) 
 	{

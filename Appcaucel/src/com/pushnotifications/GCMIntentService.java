@@ -78,10 +78,14 @@ public class GCMIntentService extends GCMBaseIntentService {
 				//msgIntent.putExtra("id", result);
 				//startService(msgIntent);
             	String status= modelo.getLocal("status");
-            		if(status.equals("0")){
-            			startActivity(new Intent(this, 
-    		    				Tiempoterminado.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-            		}
+            	
+            	String statustiempo= json.getString("statustiempo");
+            	modelo.setLocal("statustiempo", statustiempo);
+            	
+            	if(status.equals("0")){
+            		startActivity(new Intent(this, 
+            				Tiempoterminado.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+            	}
             	break;
             
             }
